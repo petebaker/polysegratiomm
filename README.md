@@ -1,4 +1,4 @@
-# R package: polySegratio
+# R package: polySegratioMM
 
   
 **polySegratioMM:** Bayesian mixture models for marker dosage in autopolyploids

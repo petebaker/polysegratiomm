@@ -3,7 +3,7 @@
 \alias{polySegratioMM}
 \docType{package}
 \title{
-Marker dosage for autoployploids by Bayesian mixture models 
+Bayesian Mixture Models for Marker Dosage in Autopolyploids
 }
 \description{
   These functions provide tools for estimating marker dosage for
@@ -20,8 +20,8 @@ Marker dosage for autoployploids by Bayesian mixture models
   \tabular{ll}{
 Package: \tab polySegratioMM\cr
 Type: \tab Package\cr
-Version: \tab 0.6-2\cr
-Date: \tab 2012-04-10\cr
+Version: \tab 0.6-4\cr
+Date: \tab 2018-03-22\cr
 License: \tab  GPL-3
 }
 
@@ -74,8 +74,7 @@ segregation ratios and fitted mixture model on the logit scale.
       autopolyploids. \emph{Journal of genetics} \bold{22} 359--372}
     \item{Ripol, M I et al } { (1999) Statistical aspects of genetic mapping in
       autopolyploids. \emph{Gene} \bold{235} 31--41 }
-    \item{JAGS} { \url{http://www-fis.iarc.fr/~martyn/software/jags/} and
-      \url{http://streaming.stat.iastate.edu/wiki/index.php/JAGS\_Guide}}
+    \item{JAGS} { \url{http://mcmc-jags.sourceforge.net/}}
   }
 }
 \examples{

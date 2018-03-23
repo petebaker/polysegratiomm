@@ -135,7 +135,7 @@ plotTheoretical <-
         comp.lines[[iii+1]]
       comp.lines[[1]] <- comp.lines[[1]] + comp.lines[[iii+1]]
     }
-    warning("Binomial mixture density is only approximate on logit scale")
+    cat("PlotTheoretical Warning: Binomial mixture density is only approximate on logit scale\n")
     
     if (plot.sr) {
       ## first attempt - too global??

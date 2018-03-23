@@ -54,10 +54,11 @@ distribution.
 
 This library calls the \texttt{JAGS} software for Bayesian
 calculation. \texttt{JAGS 1.0} or higher must be installed following
-instructions from \url{http://mcmc-jags.sourceforge.net/}.
-The \texttt{JAGS} executable must be in your path. Currently, no
-checking is carried out to ascertain whether or not \texttt{JAGS} is
-set up appropriately.
+instructions from \url{http://mcmc-jags.sourceforge.net/}. Note that
+only the most recent version is used for testing with \texttt{R}.  The
+\texttt{JAGS} executable must be in your path. Currently, no checking
+is carried out to ascertain whether or not \texttt{JAGS} is set up
+appropriately.
 
 To use the library, you need to attach it with
 <<>>=

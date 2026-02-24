@@ -20,7 +20,7 @@ writeJagsFile(model, priors, stem = "test")
 \value{
   None.
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{  \code{\link[polySegratio]{segRatio}}  \code{\link{dump}} }
 \examples{
 ## simulate small autooctaploid data set
@@ -33,12 +33,13 @@ sr <-  segregationRatios(a1$markers)
 x <- setModel(3,8)
 x2 <- setPriors(x)
 
+\dontrun{  # run manually to inspect files
 dumpData(sr, x)
 inits <- setInits(x,x2)
 dumpInits(inits)
 ##x.priors <- setPriors(x, "vague")
 writeJagsFile(x, x2, stem="test")
-
+}
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

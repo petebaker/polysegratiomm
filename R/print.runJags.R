@@ -1,8 +1,7 @@
 `print.runJags` <-
-function(x, ... )
-{
+function(x, ... ) {
 
-  if (class(x) != "runJags")
+  if (!inherits(x, "runJags"))
     stop("'x' must be of class 'runJags'")
 
 ##  cat("'jagsControl':", deparse(substitute(jags.control)), "\n")

@@ -37,7 +37,7 @@ diagnosticsJagsMix(mcmc.mixture, diagnostics = TRUE, plots = FALSE,
   If \code{return.results} is TRUE then a list is returned with
   components depending on various settings of arguments
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{ \code{\link[coda]{mcmc}} \code{\link[coda]{autocorr.diag}}
     \code{\link[coda]{raftery.diag}}  \code{\link[coda]{geweke.diag}}
     \code{\link[coda]{gelman.diag}} \code{\link[coda]{trellisplots}}

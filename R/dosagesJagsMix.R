@@ -2,8 +2,7 @@
 function(mcmc.mixture, jags.control, seg.ratio, chain=1,
            max.post.prob=TRUE,
            thresholds= c(0.5,0.6,0.7,0.8,0.9,0.95,0.99),
-           print=FALSE, print.warning=TRUE, index.sample=20)
-{
+           print=FALSE, print.warning=TRUE, index.sample=20) {
 
   ## Purpose: compute and return estimated dosages under specified model
   ##          using posterior probabilities derived from mcmc chains by
@@ -35,13 +34,13 @@ function(mcmc.mixture, jags.control, seg.ratio, chain=1,
   ## max.post.dosage: dosage allocated on basis of 'max.post'
 
 
-  if (class(mcmc.mixture) != "segratioMCMC")
+  if (!inherits(mcmc.mixture, "segratioMCMC"))
     stop("'mcmc.mixture' must be of class 'segratioMCMC'")
 
-  if (class(jags.control) != "jagsControl")
+  if (!inherits(jags.control, "jagsControl"))
     stop("'jags.control' must be of class 'jagsControl'")
 
-  if (class(seg.ratio) != "segRatio") {
+  if (!inherits(seg.ratio, "segRatio")) {
     stop("'seg.ratio' must be of class 'segRatio'")
   }
 
@@ -77,7 +76,7 @@ function(mcmc.mixture, jags.control, seg.ratio, chain=1,
   
   ## classify using maximum posterior probability
 
-  if (max.post.prob){
+  if (max.post.prob) {
     max.post <- apply(p.dosage, 1, max)
     if (print) {
       cat("\nMaximum posterior probabilities for",dim(p.dosage)[1],"markers\n")
@@ -91,7 +90,7 @@ function(mcmc.mixture, jags.control, seg.ratio, chain=1,
     no.maxs <- rowSums(p.dosage==max.post)
     class.post.prob <- no.maxs*NA
     if (max(no.maxs)>1) {
-      if (print.warning){
+      if (print.warning) {
         cat("Warning: more than one maximum for some markers\n")
         print(p.dosage[no.maxs>1,])
       }
@@ -136,6 +135,5 @@ function(mcmc.mixture, jags.control, seg.ratio, chain=1,
   oldClass(res) <- "dosagesMCMC"
   
   return(res)
-
 }
 

@@ -97,7 +97,7 @@ plotTheoretical(ploidy.level=8, seg.ratios=NULL, n.components=NULL,
 }
 \value{ None.
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{ \code{\link[coda]{summary.mcmc}} \code{\link[coda]{mcmc}}
   \code{\link{segratioMCMC}} \code{\link{readJags}}
   \code{\link{diagnosticsJagsMix}} \code{\link{runSegratioMM}} 

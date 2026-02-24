@@ -1,7 +1,7 @@
 `print.runJagsWrapper` <-
-function(x, ...){
+function(x, ...) {
   
-  if (class(x) != "runJagsWrapper")
+  if (!inherits(x, "runJagsWrapper"))
     stop("'x' must be of class 'runJagsWrapper'")
 
   print(x$run.jags)

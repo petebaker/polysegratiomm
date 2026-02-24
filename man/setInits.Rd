@@ -41,7 +41,7 @@ dumpInits(inits, stem = "test", inits.file = paste(stem, "-inits.R",
     initial value of precision of random effect \emph{b} which is normally
     distributed with mean 0 and precision \code{taub}}
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \note{\emph{Warning}: If a number of chains are to be produced then
   several seeds may be specified. Currently, this is largely untested
   and so it is highly unlikely that this will actually
@@ -57,8 +57,10 @@ a1 <- sim.autoMarkers(8,c(0.7,0.2,0.1),n.markers=100,n.individuals=50)
 x <- setModel(3,8)
 x2 <- setPriors(x)
 inits <- setInits(x,x2)
-dumpInits(inits)
 
+\dontrun{
+dumpInits(inits)
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

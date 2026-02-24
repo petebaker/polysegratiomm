@@ -50,7 +50,7 @@ max.post.prob = TRUE, thresholds = c(0.5, 0.6, 0.7, 0.8, 0.9, 0.95,
     if \code{print} is \code{TRUE}. If \code{index.sample} is of length
     1 then a random sample of size \code{index.sample} is selected }
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{ \code{\link{dosagesMCMC}}  \code{\link{readJags}}}
 \examples{
 ## simulate small autooctaploid data set
@@ -62,12 +62,14 @@ sr <-  segregationRatios(a1$markers)
 ## set up model, priors, inits etc and write files for JAGS
 x <- setModel(3,8)
 x2 <- setPriors(x)
+
+\dontrun{
+## write control files for JAGs run
 dumpData(sr, x)
 inits <- setInits(x,x2)
 dumpInits(inits)
 writeJagsFile(x, x2, stem="test")
 
-\dontrun{
 ## run JAGS
 small <- setControl(x, burn.in=200, sample=500)
 writeControlFile(small)

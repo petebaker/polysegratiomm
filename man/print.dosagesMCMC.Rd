@@ -26,7 +26,7 @@
 \value{
   None.
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{ \code{\link{dosagesMCMC}}  \code{\link{readJags}}}
 \examples{
 ## simulate small autooctaploid data set

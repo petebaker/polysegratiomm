@@ -1,11 +1,10 @@
 `writeJagsFile` <-
-function(model, priors, stem="test")
-{
+function(model, priors, stem="test") {
 
-  if (class(model) != "modelSegratioMM")
+  if (!inherits(model, "modelSegratioMM"))
     stop("model must be of class 'modelSegratioMM'")
 
-  if (class(priors) != "priorsSegratioMM")
+  if (!inherits(priors, "priorsSegratioMM"))
     stop("model must be of class 'priorsSegratioMM'")
   
   bc <- gsub("STEM",stem,model$bugs.code)

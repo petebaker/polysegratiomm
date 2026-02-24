@@ -1,6 +1,5 @@
 `setInits` <-
-function(model, priors, seed=1)
-{
+function(model, priors, seed=1) {
   ## at moment only one chain - think about it
   ## from JAGS 0.97 seed is set in inits as vector with one seed for
   ##                each chain
@@ -8,10 +7,10 @@ function(model, priors, seed=1)
   ## didn't set seed here but in "jags.cmd" file
   ## outdated now that JAGS 1.0 available
   
-  if (class(model) != "modelSegratioMM")
+  if (!inherits(model, "modelSegratioMM"))
     stop("'model' must be of class 'modelSegratioMM'")
 
-  if (class(priors) != "priorsSegratioMM")
+  if (!inherits(priors, "priorsSegratioMM"))
     stop("'priors' must be of class 'priorsSegratioMM'")
   
   n <- model$n.components

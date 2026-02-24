@@ -1,9 +1,8 @@
 `runJags` <-
 function(jags.control, jags="jags", quiet = FALSE,
                      cmd.file=paste(jags.control$stem,".cmd",sep=""),
-                     timing=TRUE)
-{
-  if (class(jags.control) != "jagsControl")
+                     timing=TRUE) {
+  if (!inherits(jags.control, "jagsControl"))
     stop("'jags.control' must be of class 'jagsControl'")
   
   if (! file.exists(cmd.file))  ## maybe a bit redundant

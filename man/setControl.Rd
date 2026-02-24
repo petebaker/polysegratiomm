@@ -49,7 +49,7 @@ setControl(model, stem = "test", burn.in = 2000, sample = 5000, thin = 1,
   \item{monitor.var}{which variables to be monitored}
   \item{call}{function call}
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{ \code{\link{setModel}} \code{\link{setInits}}
   \code{\link[polySegratio]{expected.segRatio}}
   \code{\link[polySegratio]{segRatio}}

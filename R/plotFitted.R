@@ -4,8 +4,7 @@ plotFitted <-
            xaxis=c("logit","raw"), ylim=NULL, NCLASS=NULL, n.seq=100,
            xlab="logit(Segregation Ratio)", ylab="Density", density.plot=FALSE,
            fitted.lwd=2, fitted.col="blue", bar.col="lightgreen", cex=1,
-           warnings = FALSE, main=NULL, ...)
-{
+           warnings = FALSE, main=NULL, ...) {
   ## Purpose: plot out histogram of observed segregation ratios on
   ##          logit scale along with scaled density of fitted
   ##          components corresponding to dosage classes using trellis
@@ -23,10 +22,10 @@ plotFitted <-
   ## xlab:        x-axis label
   ## eg ... ylab, main etc
 
-  if (class(seg.ratios) != "segRatio")
+  if (!inherits(seg.ratios, "segRatio"))
     stop("'seg.ratios' must be of class 'segRatio'")
   
-  if (class(summary.mixture) != "summarySegratioMCMC")
+  if (!inherits(summary.mixture, "summarySegratioMCMC"))
     stop("'summary.mixture' must be of class 'summarySegratioMCMC'")
 
   var.names <- rownames(summary.mixture$statistics)
@@ -79,7 +78,7 @@ plotFitted <-
     NCLASS <- min(max(nclass.Sturges(y),round(length(y)/6)),25)
 
   if(theoretical==TRUE) {
-    if (class(model)=="modelSegratioMM") {
+    if (inherits(model, "modelSegratioMM")) {
       ttt <- plotTheoretical(ploidy.level=model$E.segRatio$ploidy.level,
                              n.components=model$n.components,
                              n.individuals=seg.ratios$n.individuals,

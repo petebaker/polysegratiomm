@@ -1,10 +1,9 @@
 `plot.segratioMCMC` <-
 function(x, ..., row.index=c(1:10),
                                   var.index=c(1:6),
-                                  marker.index=c(1:8))
-{
+                                  marker.index=c(1:8)) {
 
-  if (class(x) != "segratioMCMC")
+  if (!inherits(x, "segratioMCMC"))
     stop("'x' must be of class 'segratioMCMC'")
   
   ## based on plot.mcmc - maybe should look at usemethod

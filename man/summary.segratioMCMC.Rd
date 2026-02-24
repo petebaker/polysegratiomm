@@ -29,7 +29,7 @@
   contains summary statistics for parameters and some markers. For
   details see \code{\link[coda]{summary.mcmc}}
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{ \code{\link[coda]{summary.mcmc}} \code{\link[coda]{mcmc}}
   \code{\link{segratioMCMC}} \code{\link{readJags}}
   \code{\link{diagnosticsJagsMix}}

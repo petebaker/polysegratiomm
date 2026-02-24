@@ -1,9 +1,8 @@
 `writeControlFile` <-
 function(jags.control,
-                             file=paste(jags.control$stem,".cmd",sep=""))
-{
+                             file=paste(jags.control$stem,".cmd",sep="")) {
 
-  if (class(jags.control) != "jagsControl")
+  if (!inherits(jags.control, "jagsControl"))
     stop("'jags.control' must be of class 'jagsControl'")
 
 ##  if (class(priors) != "priorsSegratioMM")
@@ -12,4 +11,5 @@ function(jags.control,
   cat(file=file, jags.control$jags.code, sep="\n")
 
 }
+
 

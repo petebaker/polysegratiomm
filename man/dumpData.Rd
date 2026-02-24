@@ -27,7 +27,7 @@ dumpData(seg.ratio, model, stem = "test", fix.one = TRUE,
 \value{
   None.
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{  \code{\link[polySegratio]{segRatio}}  \code{\link{dump}} }
 \examples{
 ## simulate small autooctaploid data set
@@ -39,8 +39,9 @@ sr <-  segregationRatios(a1$markers)
 ## set up model for 3 components of autooctoploid
 x <- setModel(3,8)
 
+\dontrun{
 dumpData(sr, x)
-
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

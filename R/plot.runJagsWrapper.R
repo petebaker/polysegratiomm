@@ -1,7 +1,7 @@
 `plot.runJagsWrapper` <-
-function(x, theoretical=FALSE, ...){
+function(x, theoretical=FALSE, ...) {
   
-  if (class(x) != "runJagsWrapper")
+  if (!inherits(x, "runJagsWrapper"))
     stop("'x' must be of class 'runJagsWrapper'")
 
   if (theoretical==TRUE) {

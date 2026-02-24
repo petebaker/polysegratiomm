@@ -22,7 +22,7 @@ readJags(run.jags, quiet = TRUE, \dots)
   \item{mcmc.list}{object of class \code{mcmc.list} containing the MCMC
     sample(s)}
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{  \code{\link[coda]{mcmc.list}} \code{\link{setPriors}}
       \code{\link{setInits}}
       \code{\link[polySegratio]{expected.segRatio}}
@@ -48,6 +48,8 @@ cat(x$bugs.code,x2$bugs.code,sep="\n")
 x3 <- setModel(3,8, random.effect = TRUE)
 x4 <- setPriors(x3, type="strong")
 
+\dontrun{
+## write control files for JAGs run
 dumpData(sr, x3)
 inits <- setInits(x,x2)
 dumpInits(inits)
@@ -56,7 +58,7 @@ writeJagsFile(x, x2, stem="test")
 
 small <- setControl(x, burn.in=20, sample=50)
 writeControlFile(small)
-\dontrun{
+
 rj <- runJags(small)  ## just run it
 
 xj <- readJags(rj)

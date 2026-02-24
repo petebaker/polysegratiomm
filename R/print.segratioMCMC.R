@@ -1,10 +1,9 @@
 `print.segratioMCMC` <-
 function(x, ..., row.index=c(1:10),
                                   var.index=c(1:6),
-                                  marker.index=c(1:8), chain=1)
-{
+                                  marker.index=c(1:8), chain=1) {
 
-  if (class(x) != "segratioMCMC")
+  if (!inherits(x, "segratioMCMC"))
     stop("'x' must be of class 'segratioMCMC'")
 
   ## print object of type segratioMCMC
@@ -34,8 +33,7 @@ function(x, ..., row.index=c(1:10),
   var.index <- var[var.index]
 
   
-  for (i in length(chain))
-    {
+  for (i in length(chain)) {
       cat("Chain:",chain,"\nSubset:\n")
       print(x$mcmc.list[ row.index , var.index])
       print(x$mcmc.list[ row.index , T.print] )

@@ -33,7 +33,7 @@ runJags(jags.control, jags = "jags", quiet = FALSE,
   \item{elapsed.time}{elapsed user and system time}
   \item{call}{function call}
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{ \code{\link{setPriors}} \code{\link{setInits}}
   \code{\link[polySegratio]{expected.segRatio}}
   \code{\link[polySegratio]{segRatio}}
@@ -50,13 +50,16 @@ sr <-  segregationRatios(a1$markers)
 ## set up model with 3 components
 x <- setModel(3,8)
 x2 <- setPriors(x)
+
+\dontrun{
+
+## write control files for JAGs run
 dumpData(sr, x)
 inits <- setInits(x,x2)
 dumpInits(inits)
 ##x.priors <- setPriors(x, "vague")
 writeJagsFile(x, x2, stem="test")
 
-\dontrun{
 small <- setControl(x, burn.in=20, sample=50)
 writeControlFile(small)
 rj <- runJags(small)  ## just run it

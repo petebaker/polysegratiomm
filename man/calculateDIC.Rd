@@ -26,14 +26,15 @@ calculateDIC(mcmc.mixture, model, priors, seg.ratios, chain=1, print.DIC=FALSE)
   A scalar DIC is returned
 }
 \references{
-  \itemize{
-  \item{G Celeaux et. al.}{ (2006) Deviance Information Criteria for
-    Missing Data Models \emph{Bayesian Analysis} \bold{4} 23pp}
-  \item{D Spiegelhalter et. el.}{ (2002) Bayesian measures of model
-    complexity and fit \emph{JRSS B} \bold{64} 583--640}
-  }
+  
+  G Celeaux, G et. al. (2006) Deviance Information Criteria for
+  Missing Data Models \emph{Bayesian Analysis} \bold{4} 23pp
+  
+  Spiegelhalter, D et. el. (2002) Bayesian measures of model
+    complexity and fit \emph{JRSS B} \bold{64} 583--640
+
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{ \code{\link{dosagesMCMC}}  \code{\link{readJags}}}
 \examples{
 ## simulate small autooctaploid data set
@@ -45,12 +46,14 @@ sr <-  segregationRatios(a1$markers)
 ## set up model, priors, inits etc and write files for JAGS
 x <- setModel(3,8)
 x2 <- setPriors(x)
+
+\dontrun{
+## set up files needed for JAGs run
 dumpData(sr, x)
 inits <- setInits(x,x2)
 dumpInits(inits)
 writeJagsFile(x, x2, stem="test")
 
-\dontrun{
 ## run JAGS
 small <- setControl(x, burn.in=200, sample=500)
 writeControlFile(small)

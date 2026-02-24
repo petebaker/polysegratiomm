@@ -19,7 +19,7 @@ writeControlFile(jags.control,
 \value{
   None.
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{ \code{\link{setControl}}  \code{\link{runJags}} }
 \examples{
 ## simulate small autooctaploid data set
@@ -29,6 +29,9 @@ sr <-  segregationRatios(a1$markers)
 ## set up model with 3 components
 x <- setModel(3,8)
 x2 <- setPriors(x)
+
+\dontrun{
+
 dumpData(sr, x)
 inits <- setInits(x,x2)
 dumpInits(inits)
@@ -37,6 +40,7 @@ writeJagsFile(x, x2, stem="test")
 
 small <- setControl(x, burn.in=20, sample=50)
 writeControlFile(small)
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

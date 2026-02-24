@@ -7,8 +7,7 @@ plotTheoretical <-
            xlim=c(0,1), NCLASS=NULL,
            xlab="Segregation Ratio", ylab="Density", density.plot=FALSE,
            fitted.lwd=2, fitted.col="blue", cex=1, warnings = TRUE,
-           main=NULL, ...)
-{
+           main=NULL, ...) {
   ## Purpose: plot theoretical density and histogram of observed
   ##          segregation ratios (if provided) on observed p-value scale
   ##          with components corresponding to dosage classes
@@ -34,7 +33,7 @@ plotTheoretical <-
     plot.sr <- FALSE
   } else {
     plot.sr <- TRUE
-    if (class(seg.ratios) != "segRatio") {
+    if (!inherits(seg.ratios, "segRatio")) {
       stop("'seg.ratios' must be of class 'segRatio'")
     }
     n.individuals <- seg.ratios$n.individuals

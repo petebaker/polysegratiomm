@@ -4,8 +4,7 @@ function(mcmc.mixture, diagnostics=TRUE, plots=FALSE,
                      grep("b\\[",varnames(mcmc.mixture$mcmc.list)) ),
            trace.plots = FALSE, auto.corrs = FALSE, density.plots = FALSE,
            xy.plots = FALSE, hpd.intervals = FALSE, hdp.prob = 0.95,
-           return.results = FALSE)
-{
+           return.results = FALSE) {
   ## Purpose: print and plot 'coda' diagnostics after fitting dosage
   ##          mixture model using JAGS. The usual parameters of
   ##          interest are selected automatically or may be specified
@@ -33,11 +32,11 @@ function(mcmc.mixture, diagnostics=TRUE, plots=FALSE,
 
   ## require(coda) # obsolete for current version of R since in Depends
   
-  if ( !( class(mcmc.mixture) == "segratioMCMC" |
-       class(mcmc.mixture) == "runJagsWrapper")) 
+  if ( !( inherits(mcmc.mixture, "segratioMCMC") |
+       inherits(mcmc.mixture, "runJagsWrapper"))) 
     stop("'mcmc.mixture' must be of class 'segratioMCMC' or 'runJagsWrapper'")
 
-  if ( class(mcmc.mixture) == "runJagsWrapper")
+  if ( inherits(mcmc.mixture, "runJagsWrapper"))
     mcmc.mixture <- mcmc.mixture$mcmc.mixture
 
   res <- list()
@@ -71,7 +70,7 @@ function(mcmc.mixture, diagnostics=TRUE, plots=FALSE,
     res$heidel <-
       "Error: Heidelberg and Welch's diagnostics not computed due to convergence problems"
   
-  if(diagnostics){
+  if(diagnostics) {
     cat("\nRaftery and Lewis's diagnostic\n")
     print(res$raftery)
     
@@ -86,7 +85,7 @@ function(mcmc.mixture, diagnostics=TRUE, plots=FALSE,
     
     coda::acfplot(mcmc.mixture$mcmc.list[,index])
 
-    for (chain in 1:length(mcmc.mixture$mcmc.list)){
+    for (chain in 1:length(mcmc.mixture$mcmc.list)) {
       levelplot(mcmc.mixture$mcmc.list[[chain]][,index],
                 main=paste("Chain:",chain))
     }
@@ -116,7 +115,7 @@ function(mcmc.mixture, diagnostics=TRUE, plots=FALSE,
   
 
   res$hpd <- coda::HPDinterval(mcmc.mixture$mcmc.list[,index], prob=hdp.prob)
-  if(hpd.intervals){
+  if(hpd.intervals) {
     print(res$hpd)
   }
 
@@ -125,6 +124,5 @@ function(mcmc.mixture, diagnostics=TRUE, plots=FALSE,
   } else {
     return(NULL)
   }
-
 }
 

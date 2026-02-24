@@ -83,7 +83,7 @@ params = NULL, segRatio = NULL)
     \code{reffect.B} if the model contains a random effect}
   \item{call}{function call}
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{ \code{\link{setModel}} \code{\link{setInits}}
   \code{\link[polySegratio]{expected.segRatio}}
   \code{\link[polySegratio]{segRatio}}

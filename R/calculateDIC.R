@@ -1,16 +1,14 @@
 `calculateDIC` <-
-function(mcmc.mixture, model, priors, seg.ratios, chain=1, print.DIC=FALSE)
+  function(mcmc.mixture, model, priors, seg.ratios, chain=1, print.DIC=FALSE)
 {
-
   ## calculate DIC_4 from Celeax et al
-  
-  if (class(mcmc.mixture) != "segratioMCMC")
+  if (!inherits(mcmc.mixture, "segratioMCMC")) # class(mcmc.mixture) != "segratioMCMC")
     stop("'mcmc.mixture' must be of class 'segratioMCMC'")
-  if (class(model) != "modelSegratioMM")
+  if (! inherits(model, "modelSegratioMM"))# class(model) != "modelSegratioMM")
     stop("'model' must be of class 'modelSegratioMM'")
-  if (class(priors) != "priorsSegratioMM")
+  if (! inherits(priors, "priorsSegratioMM"))# class(priors) != "priorsSegratioMM")
     stop("'priors' must be of class 'priorsSegratioMM'")
-  if (class(seg.ratios) != "segRatio") {
+  if (! inherits(seg.ratios, "segRatio")) { # class(seg.ratios) != "segRatio") {
     stop("'seg.ratios' must be of class 'segRatio'")
   }
 
@@ -89,8 +87,8 @@ function(mcmc.mixture, model, priors, seg.ratios, chain=1, print.DIC=FALSE)
   mu.jl <- ( rep(1,m) %o% (n.j*mu.0) + muhat.jl*mjl )/( rep(1,m) %o% n.j + mjl)
   if (equal.variances){
     s2.jl <- ( var.nu.0 + s2hat.jl  +
-              (rep(1,m) %o% n.j * mjl)/(rep(1,m) %o% n.j + mjl)*
-              (muhat.jl - rep(1,m)%o%mu.0)^2 /(nu.0 + mjl -2) )
+               (rep(1,m) %o% n.j * mjl)/(rep(1,m) %o% n.j + mjl)*
+               (muhat.jl - rep(1,m)%o%mu.0)^2 /(nu.0 + mjl -2) )
   } else {
     s2.jl <- ((rep(1,m) %o% var.nu.0) + s2hat.jl  +
               (rep(1,m) %o% n.j * mjl)/(rep(1,m) %o% n.j + mjl)*
@@ -107,9 +105,7 @@ function(mcmc.mixture, model, priors, seg.ratios, chain=1, print.DIC=FALSE)
   
   DIC <- - (4/m) * first + (2/m)*second
 
-  if (print.DIC)
-    cat("DIC:",DIC,"\n")
+  if (print.DIC)  cat("DIC:",DIC,"\n")
   
   return(DIC)
 }
-

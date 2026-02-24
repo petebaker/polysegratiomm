@@ -64,18 +64,21 @@ be obtained with \code{\link{plotFitted}}. In addition,
 segregation ratios and fitted mixture model on the logit scale.
 
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \references{
-  \itemize{
-    \item{Baker P, Jackson P, and Aitken K.}{ (2010) Bayesian estimation
+
+    Baker, P. and Jackson, P. and Aitken, K. (2010) Bayesian estimation
       of marker dosage in sugarcane and other autopolyploids.
-      \emph{TAG Theoretical and Applied Genetics} \bold{120} (8): 1653-1672.}
-    \item{J B S Haldane } { (1930) Theoretical genetics of
-      autopolyploids. \emph{Journal of genetics} \bold{22} 359--372}
-    \item{Ripol, M I et al } { (1999) Statistical aspects of genetic mapping in
-      autopolyploids. \emph{Gene} \bold{235} 31--41 }
-    \item{JAGS} { \url{http://mcmc-jags.sourceforge.net/}}
-  }
+      \emph{TAG Theoretical and Applied Genetics} \bold{120} (8): 1653--1672
+
+    Haldane, J. B. S. (1930) Theoretical genetics of
+      autopolyploids. \emph{Journal of genetics} \bold{22} 359--372
+
+    Ripol, M. I. et al (1999) Statistical aspects of genetic mapping in
+      autopolyploids. \emph{Gene} \bold{235} 31--41
+
+    JAGS: \url{https://mcmc-jags.sourceforge.io/}
+
 }
 \examples{
 ## simulate small autooctaploid data set of 100 markers for 50 individuals

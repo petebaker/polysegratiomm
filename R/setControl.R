@@ -4,10 +4,9 @@ function(model, stem="test",
                        bugs.file=paste(stem,".bug",sep=""),
                        data.file=paste(stem,"-data.R",sep=""),
                        inits.file=paste(stem,"-inits.R",sep=""),
-                       monitor.var=model$monitor.var, seed=1)
-{
+                       monitor.var=model$monitor.var, seed=1) {
 
-  if (class(model) != "modelSegratioMM")
+  if (!inherits(model, "modelSegratioMM"))
     stop("'model' must be of class 'modelSegratioMM'")
 
   if ((length(thin) != 1) & (length(thin) != length(monitor.var)))

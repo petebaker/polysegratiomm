@@ -47,7 +47,7 @@ digits = signif.digits)))), signif.digits = 3)
 \value{
   None.
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{ \code{\link[Rcmdr]{Rcmdr}} \code{\link{Binomial}}
   \code{\link{Normal}} \code{\link{GammaDist}} }
 \examples{

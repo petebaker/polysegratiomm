@@ -7,4 +7,4 @@ Fits Bayesian mixture models to estimate marker dosage for dominant markers on a
 
 	Maintenance release: I am no longer working in polyploids.
 
-**NB:** Migrated from [r-forge](http://r-forge.r-project.org/projects/polysegratio/) to better manage project
+**NB:** Migrated from r-forge to github for better project management

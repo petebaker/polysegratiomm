@@ -1,10 +1,9 @@
 `summary.segratioMCMC` <-
 function(object, ..., row.index=c(1:10),
-                                  var.index=NULL, marker.index=c(1:8))
-{
+                                  var.index=NULL, marker.index=c(1:8)) {
 
   
-  if (class(object) != "segratioMCMC")
+  if (!inherits(object, "segratioMCMC"))
     stop("'object' must be of class 'segratioMCMC'")
 
   ## print object summary of type segratioMCMC

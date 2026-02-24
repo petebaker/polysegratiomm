@@ -78,7 +78,7 @@ runSegratioMM(seg.ratios, model, priors = setPriors(model),
     marker dosage and allocated dosages}
   \item{DIC}{Deviance Information Critereon}
 }
-\author{Peter Baker \email{p.baker1@uq.edu.au}}
+\author{Peter Baker \email{drpetebaker@gmail.com}}
 \seealso{ \code{\link{setPriors}} \code{\link{setInits}}
   \code{\link[polySegratio]{expected.segRatio}}
   \code{\link[polySegratio]{segRatio}}

@@ -1,9 +1,8 @@
 `dumpData` <-
 function(seg.ratio, model, stem="test", fix.one=TRUE,
-                     data.file=paste(stem,"-data.R",sep="") )
-{
+                     data.file=paste(stem,"-data.R",sep=""))  {
 
-  if (class(seg.ratio) != "segRatio") {
+  if (!inherits(seg.ratio, "segRatio")) {
     stop("'seg.ratio' must be of class 'segRatio'")
   }
 
